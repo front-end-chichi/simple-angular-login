@@ -1,0 +1,22 @@
+<div class="login-container">
+  <header class="d-flex justify-content-center login-logo">
+      <img src="/assets/logo-xlnet.svg" alt="logo" aria-hidden="true">
+  </header>
+
+  <div class="form-container">
+    <form [formGroup]="loginForm" (ngSubmit)="submitApplication()">
+      <input type="text" class="form-control" formControlName="username" placeholder="Username" aria-label="Username">
+      <input type="password" class="form-control" formControlName="password" placeholder="Password" aria-label="Password">
+      <div *ngIf="loginForm.errors?.['forbiddenName']">
+        Username o password non validi
+      </div>
+      <button type="submit" class="btn login-button btn-primary w-100">
+        Login
+        <svg class="icon-mini fill-white" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+          <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
